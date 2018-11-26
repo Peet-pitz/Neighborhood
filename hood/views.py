@@ -31,11 +31,6 @@ def hoodbusiness(request):
     return render(request,'business.html',{'business':business})
 
 @login_required(login_url='/accounts/login/')
-def hood(request):
-    hood = Hood.get_all()
-    return render(request,'hood.html',{'hood':hood,})
-
-@login_required(login_url='/accounts/login/')
 def hoodhealth(request):
     health = Health.get_all()
     return render(request,'health.html',{'health':health,})
@@ -139,12 +134,12 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
-# def hood(request,neighborhood_id):
-#     try:
-#         hood = Hood.objects.get(id = hood_id)
-#     except DoesNotExist:
-#         raise Http404()
-#     return render(request,"hood.html", {"hood":hood})
+def hood(request,neighborhood_id):
+    try:
+        hood = Hood.objects.get(id = hood_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"hood.html", {"hood":hood})
 
 # def search(request):
 
