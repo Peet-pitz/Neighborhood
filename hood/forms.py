@@ -11,10 +11,10 @@ class BusinessForm(forms.ModelForm):
         model = Business
         fields = '__all__'
 
-# class HealthForm(forms.ModelForm):
-#     class Meta:
-#         model = Health
-#         fields = '__all__'
+class HealthForm(forms.ModelForm):
+    class Meta:
+        model = Health
+        fields = '__all__'
 
 # class ProfileForm(forms.ModelForm):
 #     class Meta:
