@@ -80,20 +80,20 @@ def new_business(request):
         form = BusinessForm()
     return render(request, 'new_business.html', {"form": form})
 
-# @login_required(login_url='/accounts/login/')
-# def new_health(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = HealthForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             health = form.save(commit=False)
-#             health.user = current_user
-#             health.save()
-#         return redirect('indexPage')
+@login_required(login_url='/accounts/login/')
+def new_health(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = HealthForm(request.POST, request.FILES)
+        if form.is_valid():
+            health = form.save(commit=False)
+            health.user = current_user
+            health.save()
+        return redirect('indexPage')
 
-#     else:
-#         form = HealthForm()
-#     return render(request, 'new_health.html', {"form": form})
+    else:
+        form = HealthForm()
+    return render(request, 'new_health.html', {"form": form})
 
 # def profile(request):
 #     current_user = request.user
