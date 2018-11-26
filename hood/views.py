@@ -15,10 +15,10 @@ def index(request):
     post = Post.get_all()
     return render(request,'index.html',{'business':business,'hood':hood, 'post':post})
 
-# def hoodhood(request,hood_id):
-#     hood = Hood.get_all()
+def hoodhood(request,hood_id):
+    hood = Hood.get_all()
 
-#     return render(request,'hoodhood.html',{'hood':hood})
+    return render(request,'hoodhood.html',{'hood':hood})
 
 # @login_required(login_url='/accounts/login/')
 # def hoodpost(request):
