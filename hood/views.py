@@ -45,12 +45,12 @@ def hoodpolice(request):
     police = Police.get_all()
     return render(request,'police.html',{'police':police,})
 
-# def post(request,post_id):
-#     try:
-#         post = Post.objects.get(id = post_id)
-#     except DoesNotExist:
-#         raise Http404()
-#     return render(request,"post.html", {"post":post})
+def post(request,post_id):
+    try:
+        post = Post.objects.get(id = post_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"post.html", {"post":post})
 
 # @login_required(login_url='/accounts/login/')
 # def new_post(request):
