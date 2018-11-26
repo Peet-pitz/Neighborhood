@@ -1,19 +1,19 @@
-# from django.shortcuts import render
-# from django.shortcuts import render,redirect
-# from django.http  import HttpResponse,Http404
-# from .models import Hood,User,Business,Post,Health,Police
-# from django.core.exceptions import ObjectDoesNotExist
-# from django.contrib.auth.decorators import login_required
-# from .forms import HoodForm
+from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.http  import HttpResponse,Http404
+from .models import Hood,User,Business,Post,Health,Police
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+from .forms import HoodForm
 
-# # Create your views here.
+# Create your views here.
 
-# @login_required(login_url='/accounts/login/')
-# def index(request):
-#     business = Business.get_all()
-#     hood = Hood.get_all()
-#     post = Post.get_all()
-#     return render(request,'index.html',{'business':business,'hood':hood, 'post':post})
+@login_required(login_url='/accounts/login/')
+def index(request):
+    business = Business.get_all()
+    hood = Hood.get_all()
+    post = Post.get_all()
+    return render(request,'index.html',{'business':business,'hood':hood, 'post':post})
 
 # def hoodhood(request,hood_id):
 #     hood = Hood.get_all()
