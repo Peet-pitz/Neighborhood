@@ -36,24 +36,24 @@ class Hood(models.Model):
         project = cls.objects.get(id=hood_id)
         return hood
 
-# class User(models.Model):
-#     user_image = models.ImageField(upload_to = 'profile_pic/',null=True)
-#     user = models.ForeignKey(User,on_delete=models.CASCADE,null = True,related_name = 'user')
-#     hood = models.ForeignKey(Hood,on_delete=models.CASCADE, null=True)
-#     user_email = models.EmailField()
+class User(models.Model):
+    user_image = models.ImageField(upload_to = 'profile_pic/',null=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null = True,related_name = 'user')
+    hood = models.ForeignKey(Hood,on_delete=models.CASCADE, null=True)
+    user_email = models.EmailField()
     
-#     def __str__(self):
-#         return self.user_email
+    def __str__(self):
+        return self.user_email
 
-#     def save_user(self):
-#         self.save()
+    def save_user(self):
+        self.save()
 
-#     def delete_user(self):
-#         self.delete()
+    def delete_user(self):
+        self.delete()
 
-#     def update_user(self,hood):
-#         self.hood = hood
-#         self.save()
+    def update_user(self,hood):
+        self.hood = hood
+        self.save()
 
     
 
