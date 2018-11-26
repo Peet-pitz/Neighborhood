@@ -35,10 +35,10 @@ def hood(request):
     hood = Hood.get_all()
     return render(request,'hood.html',{'hood':hood,})
 
-# @login_required(login_url='/accounts/login/')
-# def hoodhealth(request):
-#     health = Health.get_all()
-#     return render(request,'health.html',{'health':health,})
+@login_required(login_url='/accounts/login/')
+def hoodhealth(request):
+    health = Health.get_all()
+    return render(request,'health.html',{'health':health,})
 
 # @login_required(login_url='/accounts/login/')
 # def hoodpolice(request):
