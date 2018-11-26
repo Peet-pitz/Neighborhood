@@ -95,23 +95,23 @@ def new_health(request):
         form = HealthForm()
     return render(request, 'new_health.html', {"form": form})
 
-# def profile(request):
-#     current_user = request.user
-#     profile = User.objects.filter(user=current_user)
+def profile(request):
+    current_user = request.user
+    profile = User.objects.filter(user=current_user)
     
-#     if len(profile)<1:
-#         profile = "No profile"
-#     else:
-#         profile = User.objects.filter(user=current_user)
+    if len(profile)<1:
+        profile = "No profile"
+    else:
+        profile = User.objects.filter(user=current_user)
 
-#     return render(request, 'profile.html',{'profile':profile})
+    return render(request, 'profile.html',{'profile':profile})
 
 
-#     #
-#     # try:
-#     #     profile = Profile.objects.get(profile = current_user)
-#     # except ObjectDoesNotExist:
-#     #     return redirect('create-profile')
+    #
+    # try:
+    #     profile = Profile.objects.get(profile = current_user)
+    # except ObjectDoesNotExist:
+    #     return redirect('create-profile')
 
 # def edit_profile(request):
 #     current_user = request.user
