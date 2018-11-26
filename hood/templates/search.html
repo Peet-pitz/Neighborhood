@@ -1,0 +1,36 @@
+<!-- {% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+{{block.super}}
+  <link rel="stylesheet" href="../static/css/profile.css">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <img  src="{{profile.user_image.url}}" class="profile"  alt="Project" class="img-responsive">
+      <style>
+        img.profile {
+          border-radius: 70%;
+        }
+      </style>
+    </div>
+    <div class="col-md-4">
+      <h1 class="text=center"> {{request.user.username}}</h1>
+      <p> hood : {{profile.hood}}</p>
+      <p> Email : {{profile.user_email}}</p>
+
+      <button class="btn profile-create-btn"><a href="{% url 'edit-profile' %}">Create Profile</a> </button>
+      <button class="btn profile-create-btn"><a href="{% url 'change_profile' profile.user%}">Edit Profile</a> </button>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+
+
+  </div>
+</div>
+{% endblock %} -->
