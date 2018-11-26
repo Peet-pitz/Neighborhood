@@ -6,10 +6,10 @@ class PostForm(forms.ModelForm):
         model = Post
         exclude = ['writer']
 
-# class BusinessForm(forms.ModelForm):
-#     class Meta:
-#         model = Business
-#         fields = '__all__'
+class BusinessForm(forms.ModelForm):
+    class Meta:
+        model = Business
+        fields = '__all__'
 
 # class HealthForm(forms.ModelForm):
 #     class Meta:
