@@ -141,18 +141,18 @@ def hood(request,neighborhood_id):
         raise Http404()
     return render(request,"hood.html", {"hood":hood})
 
-# def search(request):
+def search(request):
 
-#     if 'business' in request.GET and request.GET["business"]:
-#         search_term = request.GET.get("business")
-#         searched_business = Business.search_by_title(search_term)
-#         message = f"{search_term}"
+    if 'business' in request.GET and request.GET["business"]:
+        search_term = request.GET.get("business")
+        searched_business = Business.search_by_title(search_term)
+        message = f"{search_term}"
 
-#         return render(request, 'search.html',{"message":message,"business": searched_business})
+        return render(request, 'search.html',{"message":message,"business": searched_business})
 
-#     else:
-#         message = "You haven't searched for any term"
-#         return render(request, 'search.html',{"message":message})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
 
 # def search_details(request,business_id):
 #     try :
