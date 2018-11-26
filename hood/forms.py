@@ -21,7 +21,7 @@ class ProfileForm(forms.ModelForm):
         model = User
         exclude = ['user']
 
-# class HoodForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-#         exclude = ['user','user_image','user_email']
+class HoodForm(forms.ModelForm):
+    class Meta:
+        model = User
+        exclude = ['user','user_image','user_email']
