@@ -154,11 +154,11 @@ def search(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
-# def search_details(request,business_id):
-#     try :
-#         business = Business.objects.get(id = business_id)
+def search_details(request,business_id):
+    try :
+        business = Business.objects.get(id = business_id)
 
-#     except ObjectDoesNotExist:
-#         raise Http404()
+    except ObjectDoesNotExist:
+        raise Http404()
 
-#     return render(request, 'search_details.html', {'business':business})
+    return render(request, 'search_details.html', {'business':business})
