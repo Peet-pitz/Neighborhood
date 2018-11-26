@@ -30,10 +30,10 @@ def hoodbusiness(request):
     business = Business.get_all()
     return render(request,'business.html',{'business':business})
 
-# @login_required(login_url='/accounts/login/')
-# def hood(request):
-#     hood = Hood.get_all()
-#     return render(request,'hood.html',{'hood':hood,})
+@login_required(login_url='/accounts/login/')
+def hood(request):
+    hood = Hood.get_all()
+    return render(request,'hood.html',{'hood':hood,})
 
 # @login_required(login_url='/accounts/login/')
 # def hoodhealth(request):
