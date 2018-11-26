@@ -40,10 +40,10 @@ def hoodhealth(request):
     health = Health.get_all()
     return render(request,'health.html',{'health':health,})
 
-# @login_required(login_url='/accounts/login/')
-# def hoodpolice(request):
-#     police = Police.get_all()
-#     return render(request,'police.html',{'police':police,})
+@login_required(login_url='/accounts/login/')
+def hoodpolice(request):
+    police = Police.get_all()
+    return render(request,'police.html',{'police':police,})
 
 # def post(request,post_id):
 #     try:
