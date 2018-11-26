@@ -52,20 +52,20 @@ def post(request,post_id):
         raise Http404()
     return render(request,"post.html", {"post":post})
 
-# @login_required(login_url='/accounts/login/')
-# def new_post(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = PostForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             post = form.save(commit=False)
-#             post.writter = current_user
-#             post.save()
-#         return redirect('indexPage')
+@login_required(login_url='/accounts/login/')
+def new_post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.writter = current_user
+            post.save()
+        return redirect('indexPage')
 
-#     else:
-#         form = PostForm()
-#     return render(request, 'new_post.html', {"form": form})
+    else:
+        form = PostForm()
+    return render(request, 'new_post.html', {"form": form})
 
 # def new_business(request):
 #     current_user = request.user
