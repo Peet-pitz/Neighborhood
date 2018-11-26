@@ -67,18 +67,18 @@ def new_post(request):
         form = PostForm()
     return render(request, 'new_post.html', {"form": form})
 
-# def new_business(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = BusinessForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             business = form.save(commit=False)
-#             business.save()
-#         return redirect('indexPage')
+def new_business(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = BusinessForm(request.POST, request.FILES)
+        if form.is_valid():
+            business = form.save(commit=False)
+            business.save()
+        return redirect('indexPage')
 
-#     else:
-#         form = BusinessForm()
-#     return render(request, 'new_business.html', {"form": form})
+    else:
+        form = BusinessForm()
+    return render(request, 'new_business.html', {"form": form})
 
 # @login_required(login_url='/accounts/login/')
 # def new_health(request):
