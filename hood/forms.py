@@ -16,10 +16,10 @@ class HealthForm(forms.ModelForm):
         model = Health
         fields = '__all__'
 
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-#         exclude = ['user']
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        exclude = ['user']
 
 # class HoodForm(forms.ModelForm):
 #     class Meta:
