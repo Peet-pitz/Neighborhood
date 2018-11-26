@@ -134,21 +134,21 @@ class Health(models.Model):
         health = cls.objects.all()
         return health
 
-# class Police(models.Model):
-#     Station = models.CharField(max_length=30)
-#     contacts = models.PositiveIntegerField()
-#     neighborhood_contact = models.ForeignKey('Hood',on_delete=models.CASCADE)
+class Police(models.Model):
+    Station = models.CharField(max_length=30)
+    contacts = models.PositiveIntegerField()
+    neighborhood_contact = models.ForeignKey('Hood',on_delete=models.CASCADE)
 
-#     def __str__(self):
-#         return f'{self.Station}'
+    def __str__(self):
+        return f'{self.Station}'
 
-#     def save_police(self):
-#         self.save()
+    def save_police(self):
+        self.save()
 
-#     def delete_police(self):
-#         self.delete()
+    def delete_police(self):
+        self.delete()
 
-#     @classmethod
-#     def get_all(cls):
-#         police = cls.objects.all()
-#         return police
+    @classmethod
+    def get_all(cls):
+        police = cls.objects.all()
+        return police
