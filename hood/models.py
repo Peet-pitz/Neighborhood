@@ -1,40 +1,40 @@
-# from django.db import models
-# from django.core.validators import URLValidator
-# from django.contrib.auth.models import User
-# from tinymce.models import HTMLField
+from django.db import models
+from django.core.validators import URLValidator
+from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
-# # Create your models here.
-# class Hood(models.Model):
-#     name = models.CharField(max_length = 50)
-#     location = models.CharField(max_length = 50)
-#     occupants_count = models.PositiveIntegerField(choices=list(zip(range(0,50), range(0,50))),default=0)
+# Create your models here.
+class Hood(models.Model):
+    name = models.CharField(max_length = 50)
+    location = models.CharField(max_length = 50)
+    occupants_count = models.PositiveIntegerField(choices=list(zip(range(0,50), range(0,50))),default=0)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
-#     def save_hood(self):
-#         self.save()
+    def save_hood(self):
+        self.save()
 
-#     def delete_hood(self):
-#         self.delete()
+    def delete_hood(self):
+        self.delete()
 
-#     def update_hood(self,location):
-#         self.location = location
-#         self.save()
+    def update_hood(self,location):
+        self.location = location
+        self.save()
 
-#     def update_hood(self,occupants_count):
-#         self.occupants_count = occupants_count
-#         self.save()
+    def update_hood(self,occupants_count):
+        self.occupants_count = occupants_count
+        self.save()
 
-#     @classmethod
-#     def get_all(cls):
-#         hoods = cls.objects.all()
-#         return hood
+    @classmethod
+    def get_all(cls):
+        hoods = cls.objects.all()
+        return hood
 
-#     @classmethod
-#     def get_hood(cls, hood_id):
-#         project = cls.objects.get(id=hood_id)
-#         return hood
+    @classmethod
+    def get_hood(cls, hood_id):
+        project = cls.objects.get(id=hood_id)
+        return hood
 
 # class User(models.Model):
 #     user_image = models.ImageField(upload_to = 'profile_pic/',null=True)
