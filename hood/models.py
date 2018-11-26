@@ -57,40 +57,40 @@ class User(models.Model):
 
     
 
-# class Business(models.Model):
-#     business_image = models.ImageField(upload_to = 'business/', null=True)
-#     business_name = models.CharField(max_length = 50)
-#     user = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
-#     hood = models.ForeignKey(Hood,on_delete=models.CASCADE, null=True)
-#     business_email = models.EmailField()
+class Business(models.Model):
+    business_image = models.ImageField(upload_to = 'business/', null=True)
+    business_name = models.CharField(max_length = 50)
+    user = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
+    hood = models.ForeignKey(Hood,on_delete=models.CASCADE, null=True)
+    business_email = models.EmailField()
 
-#     def __str__(self):
-#         return self.business_name
+    def __str__(self):
+        return self.business_name
 
-#     def save_business(self):
-#         self.save()
+    def save_business(self):
+        self.save()
 
-#     def delete_business(self):
-#         self.delete()
+    def delete_business(self):
+        self.delete()
 
-#     def update_business(self,business_name):
-#         self.business_name = business_name
-#         self.save()
+    def update_business(self,business_name):
+        self.business_name = business_name
+        self.save()
 
-#     @classmethod
-#     def get_all(cls):
-#         business = cls.objects.all()
-#         return business
+    @classmethod
+    def get_all(cls):
+        business = cls.objects.all()
+        return business
 
-#     @classmethod
-#     def get_business(cls, business_id):
-#         business = cls.objects.get(id=business_id)
-#         return business
+    @classmethod
+    def get_business(cls, business_id):
+        business = cls.objects.get(id=business_id)
+        return business
 
-#     @classmethod
-#     def search_by_title(cls,search_term):
-#         business = cls.objects.filter(business_name__icontains=search_term)
-#         return business
+    @classmethod
+    def search_by_title(cls,search_term):
+        business = cls.objects.filter(business_name__icontains=search_term)
+        return business
 
 # class Post(models.Model):
 #     post_image = models.ImageField(upload_to = 'post/', null=True)
